@@ -14,7 +14,7 @@ public class AthleteVO {
 	private int goldTeam;
 	private int silverTeam;
 	private int bronzeTeam;
-	private String prize;
+	private int prize;
 	
 	
 	public AthleteVO() {
@@ -22,7 +22,7 @@ public class AthleteVO {
 	}
 	public AthleteVO(int id, String name, Date birthDate, String gender, String sports, 
 				int goldSolo, int silverSolo, int bronzeSolo, int goldTeam, int silverTeam, 
-				int bronzeTeam, String prize) {
+				int bronzeTeam, int prize) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -105,10 +105,10 @@ public class AthleteVO {
 	public void setBronzeTeam(int bronzeTeam) {
 		this.bronzeTeam = bronzeTeam;
 	}
-	public String getPrize() {
+	public int getPrize() {
 		return prize;
 	}
-	public void setPrize(String prize) {
+	public void setPrize(int prize) {
 		this.prize = prize;
 	}
 	@Override
