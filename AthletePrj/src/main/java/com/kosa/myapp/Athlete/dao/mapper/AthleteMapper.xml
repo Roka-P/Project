@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kosa.myapp.Athlete.dao.mapper.AthleteMapper">
+<mapper namespace="com.kosa.myapp.athlete.dao.IAthleteRepository">
+
+	<resultMap type="com.kosa.myapp.athlete.model.AthleteVO" id="athMap">
+		<result column="id"				property="id"/>
+		<result column="name"			property="name"/>
+		<result column="birth_date"		property="birthDate"/>
+		<result column="age"			property="age"/>
+		<result column="gender"			property="gender"/>
+		<result column="sports"			property="sports"/>
+		<result column="gold_solo"		property="goldSolo"/>
+		<result column="silver_solo"	property="silverSolo"/>
+		<result column="bronze_solo"	property="bronzeSolo"/>
+		<result column="gold_team"		property="goldTeam"/>
+		<result column="silver_team"	property="silverTeam"/>
+		<result column="bronze_team"	property="bronzeTeam"/>
+		<result column="prize"			property="prize"/>
+	</resultMap>
+	
+	<select id="getAthList" resultMap="athMap">
+		select * 
+		from athletes
+	</select>
+	
+	<select id="getAthInfo" parameterType="int" resultType="com.kosa.myapp.athlete.model.AthleteVO">
+		select 	id				as id, 
+				name			as name, 
+				birth_date		as birthDate, 
+				age				as age, 
+				gender			as gender, 
+				sports			as sports, 
+				gold_solo		as goldSolo, 
+				silver_solo		as silverSolo, 
+				bronze_solo		as bronzeSolo, 
+				gold_team		as goldTeam, 
+				silver_team		as silverTeam, 
+				bronze_team		as bronzeTeam, 
+				prize			as prize 
+		from athletes where id=#{athid}
+	</select>
 </mapper>
