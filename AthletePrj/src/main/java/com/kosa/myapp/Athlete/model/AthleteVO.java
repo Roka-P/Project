@@ -1,4 +1,4 @@
-package com.kosa.myapp.Athlete.model;
+package com.kosa.myapp.athlete.model;
 
 import java.sql.Date;
 
@@ -6,6 +6,7 @@ public class AthleteVO {
 	private int id;
 	private String name;
 	private java.sql.Date birthDate;
+	private int age;
 	private String gender;
 	private String sports;
 	private int goldSolo;
@@ -16,17 +17,17 @@ public class AthleteVO {
 	private int bronzeTeam;
 	private int prize;
 	
-	
 	public AthleteVO() {
 		super();
 	}
-	public AthleteVO(int id, String name, Date birthDate, String gender, String sports, 
-				int goldSolo, int silverSolo, int bronzeSolo, int goldTeam, int silverTeam, 
-				int bronzeTeam, int prize) {
+	
+	public AthleteVO(int id, String name, Date birthDate, int age, String gender, String sports, int goldSolo,
+			int silverSolo, int bronzeSolo, int goldTeam, int silverTeam, int bronzeTeam, int prize) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.birthDate = birthDate;
+		this.age = age;
 		this.gender = gender;
 		this.sports = sports;
 		this.goldSolo = goldSolo;
@@ -37,7 +38,6 @@ public class AthleteVO {
 		this.bronzeTeam = bronzeTeam;
 		this.prize = prize;
 	}
-	
 	
 	public int getId() {
 		return id;
@@ -56,6 +56,12 @@ public class AthleteVO {
 	}
 	public void setBirthDate(java.sql.Date birthDate) {
 		this.birthDate = birthDate;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
 	}
 	public String getGender() {
 		return gender;
@@ -111,14 +117,13 @@ public class AthleteVO {
 	public void setPrize(int prize) {
 		this.prize = prize;
 	}
+
 	@Override
 	public String toString() {
-		return "AthleteVO [id=" + id + ", name=" + name + ", birthDate=" + birthDate + ", gender=" + gender
-				+ ", sports=" + sports + ", goldSolo=" + goldSolo + ", silverSolo=" + silverSolo + ", bronzeSolo="
-				+ bronzeSolo + ", goldTeam=" + goldTeam + ", silverTeam=" + silverTeam + ", bronzeTeam=" + bronzeTeam
-				+ ", prize=" + prize + "]";
+		return "AthleteVO [id=" + id + ", name=" + name + ", birthDate=" + birthDate + ", age=" + age + ", gender="
+				+ gender + ", sports=" + sports + ", goldSolo=" + goldSolo + ", silverSolo=" + silverSolo
+				+ ", bronzeSolo=" + bronzeSolo + ", goldTeam=" + goldTeam + ", silverTeam=" + silverTeam
+				+ ", bronzeTeam=" + bronzeTeam + ", prize=" + prize + "]";
 	}
-	
-	
 	
 }
